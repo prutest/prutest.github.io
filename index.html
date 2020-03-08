@@ -16,38 +16,41 @@
       <div class="form-horizontal">
         <div class="form-group">
             <label class="control-label col-sm-2" for="linkurl" >Website URL:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="linkurl"  name="linkurl" placeholder="Example: http://www.example.com">
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="linkurl"  name="linkurl" placeholder="Example: http://www.example.com" onkeydown="hideError();">
             </div>
+            <div class="invalid-feedback hidden" style="color: red" id="websiterequired">
+                * required
+              </div>
           </div>
 
         <div class="form-group">
           <label class="control-label col-sm-2" for="source">Source:</label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input type="text" class="form-control" id="source" value="Facebook" name="source">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-2" for="campaign">Campaign:</label>
-          <div class="col-sm-10">          
+          <div class="col-sm-9">          
             <input type="text" class="form-control" id="campaign" value="2020_rollover_acquisition">
           </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="medium">Medium:</label>
-            <div class="col-sm-10">          
+            <div class="col-sm-9">          
               <input type="text" class="form-control" id="medium" value="paidsocial">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="content">Content:</label>
-            <div class="col-sm-10">          
+            <div class="col-sm-9">          
               <input type="text" class="form-control" id="content" value="rollover_participant">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="term">Term:</label>
-            <div class="col-sm-10">          
+            <div class="col-sm-9">          
               <input type="text" class="form-control" id="term" value="0_fae0e4b2bc-a103b5e098-12403241">
             </div>
           </div>
