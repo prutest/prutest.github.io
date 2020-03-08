@@ -6,6 +6,10 @@ function generateURL(){
     let content = document.getElementById("content").value;
     let term = document.getElementById("term").value;
     
+    if(!linkurl || (typeof linkurl === 'undefined') || linkurl.length == 0){
+        document.getElementById("websiterequired").classList.remove("hidden");
+        return;
+    }
     
     let _url = linkurl + "?" + "utm_source=" + source;
     _url += "&utm_campaign=" + campaign;
@@ -20,4 +24,8 @@ function generateURL(){
 
 function gotoURL(){
     window.location.href = document.getElementById("generatedurl").value;
+}
+
+function hideError(){
+    document.getElementById("websiterequired").classList.add("hidden");
 }
