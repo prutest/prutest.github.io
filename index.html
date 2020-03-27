@@ -1,94 +1,99 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <title>UTM URL Generator</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <script src="main.js"></script>
-    </head>
-    <body onload="onLoadInit()">
-    
-    <div class="container">
-      <h2>URL Generator</h2>
-      <div class="form-horizontal">
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="linkurl" >Target URL:</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="linkurl"  name="linkurl" placeholder="Example: http://www.example.com" onkeydown="hideError();">
-            </div>
-            <div class="invalid-feedback hidden" style="color: red" id="websiterequired">
-                * required
-              </div>
-          </div>
-
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="source">Source:</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="source" value="Facebook" name="source">
-          </div>
+<html lang="en">
+<head>
+  <title>UTM URL Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+</head>
+<body onload="onLoadInit()">
+  
+  <div class="container">
+    <h2>URL Generator</h2>
+    <div class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="linkurl" >Target URL:</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="linkurl"  name="linkurl" placeholder="Example: http://www.example.com" onkeydown="hideError();">
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="campaign">Campaign:</label>
-          <div class="col-sm-9">          
-            <input type="text" class="form-control" id="campaign" value="2020_rollover_acquisition">
-          </div>
+        <div class="invalid-feedback hidden" style="color: red" id="websiterequired">
+          * required
         </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="medium">Medium:</label>
-            <div class="col-sm-9">          
-              <input type="text" class="form-control" id="medium" value="paidsocial">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="content">Content:</label>
-            <div class="col-sm-9">          
-              <input type="text" class="form-control" id="content" value="rollover_participant">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="term">Term:</label>
-            <div class="col-sm-9">          
-              <input type="text" class="form-control" id="term" value="0_fae0e4b2bc-a103b5e098-12403241">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="term">Org:</label>
-            <div class="col-sm-9">          
-              <input type="text" class="form-control" id="org" value="GI_Walmart">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="term">Co:</label>
-            <div class="col-sm-9">          
-              <input type="text" class="form-control" id="co" value="123456789012345678901234567890123456789012345678901234567890ABCD" onkeyup="getCharCount()">
-            </div>
-            <div class="col-sm-1">
-              <button class="btn btn-secondary" id="charcount" value="0" onclick="generateMasterkey()"></button>
-           </div>
-          </div>
-        <div class="form-group">        
-          <div class="col-sm-offset-2 col-sm-10">
-            <button class="btn btn-danger" onclick="clearForm();">Clear</button>
-            <button class="btn btn-primary onclick="generateURL();">Generate URL</button>
-          </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="source">Source:</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="source" value="Facebook" name="source">
         </div>
-        <br>
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="generatedurl">Generated URL:</label>
-            <div class="col-sm-9">          
-              <input type="text" class="form-control" id="generatedurl">
-            </div>
-            <div class="col-sm-1">
-                <button class="btn btn-primary" onclick="gotoURL();">Go</button>
-            </div>
-          </div>
-          
-          
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="campaign">Campaign:</label>
+        <div class="col-sm-9">          
+          <input type="text" class="form-control" id="campaign" value="2020_rollover_acquisition">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="medium">Medium:</label>
+        <div class="col-sm-9">          
+          <input type="text" class="form-control" id="medium" value="paidsocial">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="content">Content:</label>
+        <div class="col-sm-9">          
+          <input type="text" class="form-control" id="content" value="rollover_participant">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="term">Term:</label>
+        <div class="col-sm-9">          
+          <input type="text" class="form-control" id="term" value="0_fae0e4b2bc-a103b5e098-12403241">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="term">Org:</label>
+        <div class="col-sm-9">          
+          <input type="text" class="form-control" id="org" value="GI_Walmart">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="term">Co:</label>
+        <div class="col-sm-9">          
+          <input type="text" class="form-control" id="co" value="123456789012345678901234567890123456789012345678901234567890ABCD" onkeyup="getCharCount()">
+        </div>
+        <div class="col-sm-1">
+          <button class="btn btn-secondary" id="charcount" value="0" onclick="generateMasterkey()"></button>
+        </div>
+      </div>
+      <div class="form-group">        
+        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-danger" onclick="clearForm();">Clear</button>
+          <button class="btn btn-primary onclick="generateURL();">Generate URL</button>
+        </div>
+      </div>
+      <br>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="generatedurl">Generated URL:</label>
+        <div class="col-sm-9">          
+          <input type="text" class="form-control" id="generatedurl">
+        </div>
+        <div class="col-sm-1">
+          <button class="btn btn-primary" onclick="gotoURL();">Go</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <hr/>
+        <label class="control-label col-sm-2" for="footer">&nbsp;</label>
+        <div class="col-sm-9">          
+          <small class="text text-muted">Utility by &copy; Ashish Agnihotri - *DO NOT* use without permission. Just kidding - go ahead and enjoy!  &#128578;</small>
+        </div>
+               
     </div>
-    </div>
-    
-    </body>
-    </html>
+  </div>
+  
+</body>
+</html>
