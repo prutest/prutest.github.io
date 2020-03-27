@@ -1,4 +1,5 @@
 function generateURL(){
+    console.log("1");
     let linkurl = document.getElementById("linkurl").value;
     let source = document.getElementById("source").value;
     let campaign = document.getElementById("campaign").value;
