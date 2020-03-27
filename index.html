@@ -9,13 +9,13 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <script src="main.js"></script>
     </head>
-    <body>
+    <body onload="onLoadInit()">
     
     <div class="container">
       <h2>URL Generator</h2>
       <div class="form-horizontal">
         <div class="form-group">
-            <label class="control-label col-sm-2" for="linkurl" >Website URL:</label>
+            <label class="control-label col-sm-2" for="linkurl" >Target URL:</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="linkurl"  name="linkurl" placeholder="Example: http://www.example.com" onkeydown="hideError();">
             </div>
@@ -63,12 +63,16 @@
           <div class="form-group">
             <label class="control-label col-sm-2" for="term">Co:</label>
             <div class="col-sm-9">          
-              <input type="text" class="form-control" id="co" value="123456789012345678901234567890123456789012345678901234567890ABCD">
+              <input type="text" class="form-control" id="co" value="123456789012345678901234567890123456789012345678901234567890ABCD" onkeyup="getCharCount()">
             </div>
+            <div class="col-sm-1">
+              <button class="btn btn-secondary" id="charcount" value="0" onclick="generateMasterkey()"></button>
+           </div>
           </div>
         <div class="form-group">        
           <div class="col-sm-offset-2 col-sm-10">
-            <button class="btn btn-danger" onclick="generateURL();">Generate URL</button>
+            <button class="btn btn-danger" onclick="clearForm();">Clear</button>
+            <button class="btn btn-primary onclick="generateURL();">Generate URL</button>
           </div>
         </div>
         <br>
