@@ -40,19 +40,16 @@ function generateURL(){
 }
 
 function disintegrateURL() {
+    let enteredUrl = document.getElementById("generatedurl").value;
+    clearForm();
+    document.getElementById("generatedurl").value = enteredUrl;
+
     clearRequiredClass("generatedurl");
     try {
         let urlField = document.getElementById("generatedurl").value;
         const url = new URL(urlField);
 
         document.getElementById("linkurl").value= url.protocol + "//" + url.hostname;
-        // document.getElementById("source").value = url.searchParams.get("utm_source");
-        // document.getElementById("medium").value = url.searchParams.get("utm_medium");
-        // document.getElementById("campaign").value = url.searchParams.get("utm_campaign");
-        // document.getElementById("content").value = url.searchParams.get("utm_content");
-        // document.getElementById("term").value = url.searchParams.get("utm_term");
-        // document.getElementById("org").value = url.searchParams.get("utm_org");
-        // document.getElementById("co").value = url.searchParams.get("Co");
         setElementValue(url, "source", "utm_source");
         setElementValue(url, "campaign", "utm_campaign");
         setElementValue(url, "medium", "utm_medium");
