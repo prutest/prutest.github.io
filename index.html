@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="main.js"></script>
@@ -66,13 +67,14 @@
           <input type="text" class="form-control" id="co" value="123456789012345678901234567890123456789012345678901234567890ABCD" onkeyup="getCharCount()">
         </div>
         <div class="col-sm-1">
-          <button class="btn btn-secondary" id="charcount" value="0" onclick="generateMasterkey()"></button>
+          <button class="btn btn-secondary" id="charcount" value="0" onclick="generateMasterkey()" title="Click to generate a random Masterkey."></button>
         </div>
       </div>
       <div class="form-group">        
         <div class="col-sm-offset-2 col-sm-10">
-          <button class="btn btn-danger" onclick="clearForm();">Clear</button>
-          <button class="btn btn-primary" onclick="generateURL();">Generate URL</button>
+          <button class="btn btn-primary" onclick="generateURL();">Generate URL &#11015;</button>
+          <button class="btn btn-primary" onclick="disintegrateURL();">Distintegrate URL &#11014;</button>
+          <button class="btn btn-danger" onclick="clearForm();">Clear</button>        
         </div>
       </div>
       <br>
@@ -91,7 +93,13 @@
         <div class="col-sm-9">          
           <small class="text text-muted">Utility by &copy; Ashish Agnihotri - *DO NOT* use without permission. Just kidding - go ahead and enjoy!  &#128578;</small>
         </div>
-               
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="footer">&nbsp;</label>
+        <div class="col-sm-9">          
+          <small class="text text-muted" style="color: silver;">Found a bug? Need a feature? Create/Open a pull request @ https://github.com/prutest/</small>
+        </div>
+      </div>
     </div>
   </div>
   
